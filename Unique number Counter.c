@@ -83,6 +83,7 @@ int main()
        printf("No is %d which appears %d times \n",unq[i],count_unq[i]);
 
     }
+    return 0;
 
 }
 
