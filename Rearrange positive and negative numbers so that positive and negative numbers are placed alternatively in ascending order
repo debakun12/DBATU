@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[10]={0,-1,2,-3,-4,5,-6,7,-8,9};
+    int pos=0,neg=0,neg_count=0,pos_count=0;
+    for(int i=0;i<10;i++){
+        if(arr[i]>=0){
+            pos++;
+        }
+        if(arr[i]<0){
+            neg++;
+        }
+    }
+int posi[pos];
+int nega[neg];
+    for(int i=0;i<10;i++){
+        if(arr[i]>=0){
+            posi[pos_count++]=arr[i];
+        }
+        if(arr[i]<0){
+            nega[neg_count++]=arr[i];
+        }
+    }
+
+
+for(int i=0;i<pos;i++){
+    for(int j=0;j<pos;j++){
+        if(posi[j]>posi[j+1]){
+            int temp = posi[j];
+            posi[j]=posi[j+1];
+            posi[j+1]=temp;
+        }
+    }
+}
+
+for(int i=0;i<neg;i++){
+    for(int j=0;j<neg;j++){
+        if(nega[j]>nega[j+1]){
+            int temp = nega[j];
+            nega[j]=nega[j+1];
+            nega[j+1]=temp;
+        }
+    }
+}
+int poss =0;
+int negg =0;
+for(int i=0;i<10;i++){
+    if(i%2==0)
+        arr[i]=posi[poss++];
+    else
+        arr[i]=nega[negg++];
+}
+for(int i=0;i<10;i++){
+    printf("%d ",arr[i]);
+}
+    return 0;
+}
