@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct node{
+    int data;
+    struct node* left;
+    struct node* right;
+};
+
+struct node *node_create(int data){
+    struct node* node = (struct node*)malloc(sizeof(struct node));
+    node->data = data;
+    node-> left = NULL;
+    node->right = NULL;
+    return(node);
+}
+
+int main()
+{
+
+struct node* root = node_create(1);
+    root->left = node_create(2);
+    root->left = node_create(3);
+
+    return 0;
+}
